@@ -1,0 +1,61 @@
+# -------------------------
+# Python 通用
+# -------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# -------------------------
+# 实验输出
+# -------------------------
+# 检查点
+*_checkpoints/
+*_TrainingFiles/
+# 日志
+logs*/
+pretrained/
+*logs/
+# 测试结果
+test_result*/
+
+work_dirs*/*
+
+# PyTorch / TensorFlow checkpoint
+*.pt
+*.pth
+checkpoint/
+
+# -------------------------
+# 临时文件 & 系统
+# -------------------------
+# 编辑器
+.vscode/
+.idea/
+*.swp
+# macOS
+.DS_Store
+# 临时
+*.tmp
+*.log
+
+*.log
+
+*.sbatch
+*.sh
+!install_env.sh
+!compare_methods.sh
