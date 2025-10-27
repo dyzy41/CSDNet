@@ -56,6 +56,5 @@ checkpoint/
 *.log
 
 *.sbatch
-*.sh
 !install_env.sh
 !compare_methods.sh
