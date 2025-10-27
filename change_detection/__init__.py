@@ -7,7 +7,7 @@ _model_factory = {
     'CSDNet': CSDNet,
 }
 
-def build_model(name: str, *args, **kwargs):
+def build_model(name: str, backbone:str,  *args, **kwargs):
     """
     根据 name 字符串返回对应的模型实例。
     支持传入构造函数的参数 args, kwargs。
@@ -16,4 +16,4 @@ def build_model(name: str, *args, **kwargs):
         ModelClass = _model_factory[name]
     except KeyError:
         raise ValueError(f"Unknown model name '{name}'. Available: {list(_model_factory.keys())}")
-    return ModelClass(*args, **kwargs)
+    return ModelClass(backbone, *args, **kwargs)

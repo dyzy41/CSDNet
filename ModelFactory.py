@@ -34,7 +34,7 @@ class BaseCD(L.LightningModule):
         self.save_test_results = os.path.join(self.hyparams.work_dirs, self.hyparams.exp_name+'_TrainingFiles', self.hyparams.save_test_results)
 
         # model training
-        self.change_detection = build_model(self.hyparams.model_name)
+        self.change_detection = build_model(self.hyparams.model_name, self.hyparams.backbone)
         self.val_confusion_matrix = ConfusionMatrix(task="multiclass", num_classes=self.hyparams.num_classes)
         self.test_confusion_matrix = ConfusionMatrix(task="multiclass", num_classes=self.hyparams.num_classes)
         if self.hyparams.loss_type == 'ce':

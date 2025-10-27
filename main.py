@@ -21,6 +21,8 @@ if __name__ == '__main__':
     parser.add_argument('--model_name',     type=str, default='SEED_EfficientNet', help='Model name')
     parser.add_argument('--model_type',     type=str, default='cd', help='Model type (change detection/domain generalization)')
     parser.add_argument('--model_arch',     type=str, default='BaseCD', help='Model Architecture')
+    parser.add_argument('--backbone',       type=str, default=None, help='Model Backbone Name')
+
 
     parser.add_argument('--mode',           type=str, default='train', help='Mode of the program (train/test)')
     parser.add_argument('--resume_path',    type=str, default=None,  help='Path to resume from checkpoint')
