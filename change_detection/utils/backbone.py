@@ -22,7 +22,7 @@ def build_backbone(model_name='resnet'):
         FPN_DICT = {'type': 'FPN', 'in_channels': [64, 128, 256, 512], 'out_channels': 256, 'num_outs': 4}
         num_stages = 5
 
-    elif model_name=='mobilenetv4':
+    elif model_name=='mobilenetv4_conv_small':
         try:
             model = timm.create_model(model_name, pretrained=True, pretrained_cfg_overlay=dict(file=os.path.join(os.environ.get("PRETRAIN"), 'mobilenetv4_conv_small.e3600_r256_in1k/pytorch_model.bin')), features_only=True)
         except:
