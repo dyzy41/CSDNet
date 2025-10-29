@@ -1,10 +1,14 @@
 
 from .CSDNet.StCoNet import CSDNet
+from .CSDNet.Ablation import CSDNet_CBAM, CSDNet_NL, CSDNet_SE
 
 
 # 方法一：手动构建映射字典
 _model_factory = {
     'CSDNet': CSDNet,
+    'CSDNet_CBAM': CSDNet_CBAM,
+    'CSDNet_NL': CSDNet_NL,
+    'CSDNet_SE': CSDNet_SE,
 }
 
 def build_model(name: str, backbone:str,  *args, **kwargs):
