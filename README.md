@@ -12,7 +12,6 @@ Official PyTorch implementation of **CSDNet**, a novel bitemporal change detecti
 
 **Authors:** Sijun Dong, Changxin Lu, Siming Fu, Xiaoliang Meng*  
 *School of Remote Sensing and Information Engineering, Wuhan University, Wuhan, China*  
-*Corresponding author: xmeng@whu.edu.cn*
 
 **Abstract:**
 
