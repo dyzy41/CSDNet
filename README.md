@@ -1,38 +1,36 @@
-## 项目名称
+# CSDNet: Synergy of Content and Style: Enhanced Remote Sensing Change Detection via Disentanglement and Refinement
 
-这是一个非常简单的使用Pytorch-lightning工具搭建变化检测算法的训练测试推理框架的代码。
-亲测性能稍弱于mmlab的框架，但是代码结构清晰，易于理解和修改。
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Paper](https://img.shields.io/badge/arXiv-Paper-red)](https://arxiv.org/abs/[insert_arxiv_if_available])  
+[![Code](https://img.shields.io/badge/GitHub-Code-blue)](https://github.com/dyzy41/CSDNet)
 
+Official PyTorch implementation of **CSDNet**, a novel bitemporal change detection network that leverages content-style disentanglement and contextual refinement to achieve robust and high-precision remote sensing change detection.
 
-## 📂 仓库结构
+## Paper
 
-# 遥感变化检测训练框架
+**Title:** Synergy of Content and Style: Enhanced Remote Sensing Change Detection via Disentanglement and Refinement
 
-基于PyTorch-Lightning搭建的变化检测算法训练/测试框架，支持多种主流变化检测模型。
+**Authors:** Sijun Dong, Changxin Lu, Siming Fu, Xiaoliang Meng*  
+*School of Remote Sensing and Information Engineering, Wuhan University, Wuhan, China*  
+*Corresponding author: xmeng@whu.edu.cn*
 
-## 主要特性
+**Abstract:**
 
-- 支持20+种变化检测模型：
-  - MM_ISDANet, MM_MSCANet, MM_RCTNet, MM_BASNet, MM_DARNet
-  - MM_ScratchFormer, MM_HATNet, MM_ELGCNet, MM_DMINet, MM_CGNet
-  - MM_SiamUNet_conc, MM_SiamUNet_diff, MM_CDNet等
-  
-- 完整训练流程：
-  - 支持滑动窗口推理大尺寸图像
-  - 丰富的训练监控指标(IoU, F1, Recall等)
-  - 早停机制和模型检查点保存
+Bitemporal change detection is often hindered by significant style discrepancies in images, stemming from variations in acquisition time and conditions. To mitigate this, we introduce CSDNet (content–style disentanglement network), a novel bitemporal feature interaction network that leverages content–style disentanglement and a channel gating mechanism. In the feature encoding stage, our Content-Style Disentanglement Module (CSDM) disentangles multi-scale features into content and style components using instance normalization. It then employs a dynamic gating mechanism to selectively preserve style information beneficial for change detection while suppressing background noise. A subsequent feature-level swapping strategy enhances information flow and further aligns the style representations between the bitemporal images. In the decoding stage, the Contextual Content Refiner Module (CCRM) uses a joint channel and spatial gating mechanism to attentively filter and refine the style features. These refined features are then recombined with the content features, enabling a fine-grained delineation of change regions. Extensive experiments on five public datasets—LEVIR-CD, SYSU-CD, S2Looking, WHUCD, and MSRSCD—demonstrate that CSDNet significantly surpasses various state-of-the-art methods in F1-score, IoU, and precision.
 
-- 便捷的测试功能：
-  - 自动计算各项评估指标
-  - 结果可视化保存
+The source code and pre-trained weights are available at https://github.com/dyzy41/CSDNet.
 
-- 基于comet.ml的实验管理：
-  - 可视化训练过程
+## Quantitative Results (Test Set Performance)
 
-## 快速开始
+| Dataset     | OA    | IoU   | F1    | Recall | Precision |
+|-------------|-------|-------|-------|--------|-----------|
+| **LEVIR-CD**   | 99.16 | **84.47** | **91.58** | 90.00  | 93.23     |
+| **SYSU-CD**    | 92.39 | **71.16** | **83.15** | 79.60  | 87.03     |
+| **S2Looking**  | 99.24 | **50.72** | **67.31** | 64.34  | 70.55     |
+| **WHUCD**      | 99.56 | **90.88** | **95.22** | 95.12  | 95.33     |
+| **MSRSCD**     | 93.07 | **62.01** | **76.55** | 76.38  | 76.73     |
 
- 安装依赖：
-```bash
-bash install_env.sh
+CSDNet consistently achieves top-tier or competitive results across diverse scenarios, particularly excelling in datasets with strong style discrepancies (e.g., seasonal changes in S2Looking) and high-resolution details (e.g., WHUCD).
 
+## Requirements
 
