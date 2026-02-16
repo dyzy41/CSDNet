@@ -4,7 +4,7 @@
 [![Paper](https://img.shields.io/badge/arXiv-Paper-red)](https://arxiv.org/abs/[insert_arxiv_if_available])  
 [![Code](https://img.shields.io/badge/GitHub-Code-blue)](https://github.com/dyzy41/CSDNet)
 
-Official PyTorch implementation of **CSDNet**, a novel bitemporal change detection network that leverages content-style disentanglement and contextual refinement to achieve robust and high-precision remote sensing change detection.
+Official PyTorch implementation of **CSDNet**, a novel bitemporal change detection network that leverages content-style disentanglement and contextual refinement to achieve robust and high-precision remote sensing change detection. The paper has been accepted at [IEEE TGRS](https://ieeexplore.ieee.org/document/11396066)!!
 
 ## Paper
 
